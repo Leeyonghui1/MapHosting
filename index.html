@@ -38,12 +38,8 @@
     
     function transXY(x, y){  
         var geocoder = new kakao.maps.services.Geocoder(), // 좌표계 변환 객체를 생성합니다
-        wtmX = 374831.3967, // 변환할 WTM X 좌표 입니다
-        wtmY = 470565.4638; // 변환할 WTM Y 좌표 입니다
-        
         wtmX = x, // 변환할 WTM X 좌표 입니다
         wtmY = y; // 변환할 WTM Y 좌표 입니다
-        
         
         geocoder.transCoord(wtmX, wtmY, transCoordCB, {
         input_coord: kakao.maps.services.Coords.WTM, // 변환을 위해 입력한 좌표계 입니다
