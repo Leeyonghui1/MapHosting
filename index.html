@@ -8,7 +8,7 @@
 <body>
 <!-- 지도를 표시할 div 입니다 -->
 <div id="map" style="width:100%;height:700px;"></div>
-<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=cc0ee8a78016cf2267b8b3850d5a3d71&libraries=services"></script>
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=cc0ee8a78016cf2267b8b3850d5a3d71"></script>
 <script>
     var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
     mapOption = { 
@@ -34,28 +34,7 @@
         marker = new kakao.maps.Marker( {position : mp} )
         marker.setMap(map) // 마커를 그림
     }
-    
-    function transXY(x, y){
-        var geocoder = new kakao.maps.services.Geocoder(), // 좌표계 변환 객체를 생성합니다
-            wtmX = insert_x, // 변환할 WTM X 좌표 입니다
-            wtmY = insert_y; // 변환할 WTM Y 좌표 입니다
-        
-        geocoder.transCoord(wtmX, wtmY, transCoordCB, {
-        input_coord: kakao.maps.services.Coords.WTM, // 변환을 위해 입력한 좌표계 입니다
-        output_coord: kakao.maps.services.Coords.WGS84 // 변환 결과로 받을 좌표계 입니다 
-        });
-    }
-  
-    // 좌표 변환 결과를 받아서 처리할 콜백함수 입니다.
-    function transCoordCB(result, status) {
-        // 정상적으로 검색이 완료됐으면 
-        if (status === kakao.maps.services.Status.OK) {
-            setCenter(result[0].y, result[0].x)
-            console.log(result[0].x)
-            console.log(result[0].y)
-        }
-    }
-    
+
 </script>
 </body>
 </html>
