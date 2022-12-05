@@ -57,12 +57,7 @@
 
         // 정상적으로 검색이 완료됐으면 
         if (status === kakao.maps.services.Status.OK) {
-
-            // 마커를 변환된 위치에 표시합니다
-            var marker = new kakao.maps.Marker({
-                position: new kakao.maps.LatLng(result[0].y, result[0].x), // 마커를 표시할 위치입니다
-                map: map // 마커를 표시할 지도객체입니다
-            })
+            setCenter(result[0].y, result[0].x)
         }
     }
 </script>
